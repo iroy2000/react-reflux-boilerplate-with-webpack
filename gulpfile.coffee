@@ -1,10 +1,18 @@
+# gulp modules
 gulp = require 'gulp'
 gutil = require 'gulp-util'
 stylus = require 'gulp-stylus'
+minifyHTML = require 'gulp-minify-html'
+
+# gulp filter is optional, in case you need it
+gulpFilter = require 'gulp-filter'
+
+# webpack modules
 webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
 webpackConfig = require("./webpack.config.js")
 webpackProductionConfig = require("./webpack.production.config.js")
+
 map = require 'map-stream'
 touch = require 'touch'
 _ = require 'lodash'
@@ -31,8 +39,18 @@ gulp.task('css', ->
     ))
 )
 
+gulp.task('minify-html', ->
+    opts = {comments:true,spare:true}
+
+    gulp.src('assets/**/*.html')
+      .pipe(minifyHTML(opts))
+      .pipe(gulp.dest('public'))
+      .pipe($.size())
+)
+
 gulp.task('copy-assets', ->
-    gulp.src('assets/**')
+    
+    gulp.src(['assets/**', '!assets/**/*.html'])
       .pipe(gulp.dest('public'))
       .pipe($.size())
 )
@@ -81,7 +99,7 @@ gulp.task "webpack-dev-server", (callback) ->
 gulp.task 'default', ->
   gulp.start 'build'
 
-gulp.task 'build', ['webpack:build', 'css', 'copy-assets']
+gulp.task 'build', ['webpack:build', 'css', 'copy-assets', 'minify-html']
 
 gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
   gulp.watch(['src/styles/**'], ['css'])
