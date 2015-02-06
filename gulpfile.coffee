@@ -39,6 +39,7 @@ gulp.task('css', ->
     ))
 )
 
+# this is for PROD
 gulp.task('minify-html', ->
     opts = {comments:true,spare:true}
 
@@ -48,9 +49,18 @@ gulp.task('minify-html', ->
       .pipe($.size())
 )
 
-gulp.task('copy-assets', ->
+# this is for PROD
+gulp.task('copy-assets-ignore-html', ->
     
     gulp.src(['assets/**', '!assets/**/*.html'])
+      .pipe(gulp.dest('public'))
+      .pipe($.size())
+) 
+
+# this is for DEV
+gulp.task('copy-assets', ->
+    
+    gulp.src(['assets/**'])
       .pipe(gulp.dest('public'))
       .pipe($.size())
 )
@@ -99,7 +109,7 @@ gulp.task "webpack-dev-server", (callback) ->
 gulp.task 'default', ->
   gulp.start 'build'
 
-gulp.task 'build', ['webpack:build', 'css', 'copy-assets', 'minify-html']
+gulp.task 'build', ['webpack:build', 'css', 'copy-assets-ignore-html', 'minify-html']
 
 gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
   gulp.watch(['src/styles/**'], ['css'])

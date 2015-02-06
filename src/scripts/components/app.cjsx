@@ -1,3 +1,4 @@
+React = require('react')
 Link = require('react-router').Link
 RouteHandler = require('react-router').RouteHandler
 

@@ -5,10 +5,8 @@ SampleStore = require('../stores/SampleStore')
 module.exports = React.createClass
     mixins: [Reflux.connect(SampleStore)]
     getInitialState: ->
-        {
-            msg: ''
-            note: ''
-        }
+        msg: ''
+        note: ''
 
     handleSubmit:(e) ->
         e.preventDefault()
