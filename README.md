@@ -58,5 +58,7 @@ $ gulp build  // build a production version
 * public/    - production level code after you run 'build' command
 * test/  - all your tests go to this directly
 
+__Note__ : assets/ and src/ will be compiled into public/ folder when you run build command
+
 ### Todo's
     - Write Tests
