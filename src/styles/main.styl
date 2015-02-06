@@ -1,0 +1,122 @@
+@import 'nib'
+
+center-block() 
+    display         block
+    margin-left     auto
+    margin-right    auto
+
+body
+    background url(images/bg.jpg) no-repeat center center fixed
+    background-size cover
+
+.logo 
+    border-radius 15px
+    padding 10px
+    width   160px
+    box-shadow 5px 5px 2px 0px rgba(90,90,90,0.75)
+
+.msg
+    margin-top 10px
+    padding 20px
+    font-size 40px
+
+header
+    ul
+        list-style none
+        li
+            border-radius: 12px
+            border-bottom-right-radius 5px
+            border-bottom-left-radius  5px
+            width           200px
+            float           left
+            position    relative
+
+            &.aboutme
+            &.projects
+            &.contact
+            a
+                display block
+                background    rgb(0,0,0)
+                background    rgba(0,0,0,0.1)      
+                border-top-right-radius 10px
+                border-top-left-radius  10px
+                padding 5px
+            a
+                color   #fff
+                text-shadow 2px 2px #666
+                text-decoration none
+                &:active
+                &:visited
+                &:hover
+                &:link
+                    text-decoration none
+                    color #fff
+                &:hover
+                    text-shadow none
+                    background rgba(0,0,0,0.3)
+                    
+
+            .desc
+                padding 5px                
+                background    rgb(255,255,255)
+                background    rgba(255,255,255,0.3)      
+                border-bottom-right-radius 4px
+                border-bottom-left-radius  4px
+
+.content
+    height  60vh
+    background  #fff
+    opacity 0.5
+    & > div 
+        margin-left 55px 
+.icon-i-roy 
+    width   160px    
+    margin  20px 40px
+
+.rw-words
+  text-transform  uppercase
+  span
+    position absolute
+    opacity 0
+    overflow hidden
+    animation rotateWord 18s linear infinite 0s
+    &:nth-child(2)
+      animation-delay 3s
+    &:nth-child(3)
+      animation-delay 6s
+    &:nth-child(4)
+      animation-delay 9s
+    &:nth-child(5)
+      animation-delay 12s
+    &:nth-child(6)
+      animation-delay 15s
+
+@keyframes rotateWord
+    0% 
+         opacity 0
+
+    2%
+        opacity 0
+        -webkit-transform translateY(-30px)
+        transform translateY(-30px)
+
+    5%
+        opacity 1
+        -webkit-transform translateY(0px)
+        transform translateY(0px)
+
+    17%
+        opacity 1
+        -webkit-transform translateY(0px)
+        transform translateY(0px)
+
+    20%
+        opacity 0
+        -webkit-transform translateY(30px)
+        transform translateY(30px)
+
+    80%
+        opacity 0
+
+    100%
+        opacity 0

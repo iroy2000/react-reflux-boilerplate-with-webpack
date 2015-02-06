@@ -1,0 +1,65 @@
+{
+  "name": "base",
+  "version": "0.0.0",
+  "description": "",
+  "main": "preprocessor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cjsx-loader": "^1.1.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-react-transform": "^2.1.0",
+    "coffee-script": "^1.8.0",
+    "css-loader": "^0.9.0",
+    "extract-text-webpack-plugin": "^0.3.8",
+    "file": "^0.2.2",
+    "file-loader": "^0.8.1",
+    "gulp": "^3.8.10",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-shell": "^0.2.11",
+    "gulp-size": "^1.1.0",
+    "gulp-stylus": "^2.0.0",
+    "gulp-util": "^3.0.1",
+    "highlight.js": "^8.4.0",
+    "image-webpack-loader": "^1.2.0",
+    "imagemin": "^3.1.0",
+    "jest-cli": "^0.2.1",
+    "lodash": "^3.1.0",
+    "map-stream": "0.0.5",
+    "nib": "^1.1.0",
+    "react": "^0.12.2",
+    "react-hot-loader": "^1.0.0-alpha.3",
+    "react-retina-image": "^1.1.0",
+    "react-router": "^0.11.6",
+    "reflux": "^0.2.5",
+    "style-loader": "^0.8.2",
+    "touch": "0.0.3",
+    "webpack": "^1.4.13",
+    "webpack-dev-server": "^1.6.6"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ],
+    "testFileExtensions": [
+      "coffee",
+      "js",
+      "cjsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "coffee",
+      "cjsx"
+    ]
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/gulp",
+    "watch": "./node_modules/.bin/gulp watch",
+    "build": "./node_modules/.bin/gulp build",
+    "test": "jest"
+  }
+}
