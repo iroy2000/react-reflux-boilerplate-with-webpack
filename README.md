@@ -21,7 +21,8 @@ What is supported  out of the box ?
     - JS code duplication removal during built
     - Image optimization
     - Optional TDD task to perform auto testing when file changes
-    - Please look at the package.json for all installed modules / plugins
+    
+Please look at the package.json for all installed modules / plugins
 
 
 ### Installation
