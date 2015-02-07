@@ -22,7 +22,7 @@ What is supported  out of the box ?
     - Image optimization
     - Optional TDD task to perform auto testing when file changes
     
-Please look at the package.json for all installed modules / plugins
+If you are interested, please read the __package.json__ file for all installed modules / plugins.
 
 
 ### Installation
