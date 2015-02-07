@@ -3,6 +3,7 @@ gulp = require 'gulp'
 gutil = require 'gulp-util'
 stylus = require 'gulp-stylus'
 minifyHTML = require 'gulp-minify-html'
+del =   require 'del'
 
 # gulp filter is optional, in case you need it
 gulpFilter = require 'gulp-filter'
@@ -30,21 +31,15 @@ JEST_CONFIG = {
     moduleFileExtensions: ['js', 'json', 'coffee', 'cjsx']
 }
 
+paths = {
+    dest: 'public'
+}
+
 # your webpack-dev-server port, default 8888
 DEV_PORT = '8888'
 
 # Load plugins
 $ = require('gulp-load-plugins')()
-
-gulp.task('tdd', (done) ->
-  gulp.watch([ JEST_CONFIG.rootDir + "/src/scripts/**/*.cjsx" ], [ 'test' ]);
-)
-
-gulp.task('test', (done) ->
-  jest.runCLI({ config : JEST_CONFIG }, ".", () ->
-    done()
-  )
-)
 
 # CSS
 gulp.task('css', ->
@@ -57,7 +52,7 @@ gulp.task('css', ->
       gutil.log err
     )
     .pipe($.size())
-    .pipe(gulp.dest('public/'))
+    .pipe(gulp.dest(paths.dest))
     .pipe(map((a, cb) ->
       if devServer.invalidate? then devServer.invalidate()
       cb()
@@ -70,7 +65,7 @@ gulp.task('minify-html', ->
 
     gulp.src('assets/**/*.html')
       .pipe(minifyHTML(opts))
-      .pipe(gulp.dest('public'))
+      .pipe(gulp.dest(paths.dest))
       .pipe($.size())
 )
 
@@ -78,7 +73,7 @@ gulp.task('minify-html', ->
 gulp.task('copy-assets-ignore-html', ->
     
     gulp.src(['assets/**', '!assets/**/*.html'])
-      .pipe(gulp.dest('public'))
+      .pipe(gulp.dest(paths.dest))
       .pipe($.size())
 ) 
 
@@ -86,7 +81,7 @@ gulp.task('copy-assets-ignore-html', ->
 gulp.task('copy-assets', ->
     
     gulp.src(['assets/**'])
-      .pipe(gulp.dest('public'))
+      .pipe(gulp.dest(paths.dest))
       .pipe($.size())
 )
 
@@ -115,11 +110,11 @@ gulp.task "webpack:build-dev", (callback) ->
 devServer = {}
 gulp.task "webpack-dev-server", (callback) ->
   # Ensure there's a `./public/main.css` file that can be required.
-  touch.sync('./public/main.css', time: new Date(0))
+  touch.sync('./' + paths.dest + '/main.css', time: new Date(0))
 
   # Start a webpack-dev-server.
   devServer = new WebpackDevServer(webpack(webpackConfig),
-    contentBase: './public/'
+    contentBase: './' + paths.dest + '/'
     hot: true
     watchDelay: 100
     noInfo: true
@@ -131,15 +126,47 @@ gulp.task "webpack-dev-server", (callback) ->
 
   return
 
+gulp.task('clean-dest', (done) ->
+    del([paths.dest + '/*'], done)
+)
+
+########################################################
+# Below are the recommended gulp commands for new users 
+########################################################
+
+# gulp  ( with no argument )
+# description -- the same as build
 gulp.task 'default', ->
   gulp.start 'build'
 
+# gulp tdd
+# description -- test will start automatically everytime when cjsx file changes
+gulp.task('tdd', (done) ->
+  gulp.watch([ JEST_CONFIG.rootDir + "/src/scripts/**/*.cjsx" ], [ 'test' ]);
+)
+
+# gulp test
+# description -- run a single test
+gulp.task('test', (done) ->
+  jest.runCLI({ config : JEST_CONFIG }, ".", () ->
+    done()
+  )
+)
+
+# gulp build
+# description -- create a production ready snapshot into paths.dest folder ( default ./public )
 gulp.task 'build', ['webpack:build', 'css', 'copy-assets-ignore-html', 'minify-html']
 
+# gulp dev
+# description -- start a development server
 gulp.task 'dev', ['css', 'copy-assets', 'webpack-dev-server'], ->
   gulp.watch(['src/styles/**'], ['css'])
   gulp.watch(['assets/**'], ['copy-assets'])
 
+# gulp dev-tdd
+# description -- start a development server plus test run automatically when cjsx file changes
 gulp.task 'dev-tdd', ['dev', 'tdd']
   
-
+# gulp clean
+# description -- clean the paths.dest and regenerate css
+gulp.task 'clean', ['clean-dest', 'css'] 
