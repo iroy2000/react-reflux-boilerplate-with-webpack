@@ -1,8 +1,8 @@
+# please pardon me for this too simple code, it is an example on how to use this workflow framework
 React = require('react')
 Link = require('react-router').Link
 RouteHandler = require('react-router').RouteHandler
 
-# Provides global navigation for app e.g. the "Hello | Styleguide" at the top.
 module.exports = React.createClass
   render: ->
     <div>

@@ -1,5 +1,3 @@
-# Load css first thing. It gets injected in the <head> in a <style> element by
-# the Webpack style-loader.
 require '../../../public/main.css'
 
 React = require 'react'
