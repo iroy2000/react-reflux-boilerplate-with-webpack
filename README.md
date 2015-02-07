@@ -40,7 +40,7 @@ Now open your broswer and go to 'localhost:8888/'
 
 ### Commands
 
-There are two ways of starting and building, but they are pointing to the same scripts at the end :)
+There are two ways of starting and building, but the Gulp way has more tasks defined :)
 
 You need to run the following command in the project root, where is the same directoy as package.json
 
@@ -59,6 +59,7 @@ $ gulp dev  // start a dev server
 $ gulp dev-tdd // start a dev server with automatic test running
 $ gulp build  // build a production version
 $ gulp test   // run test manually
+$ gulp clean  // in case you need to clean the public folder
 ```
 
 Please see __Gotcha__ section if you run into problems :/
