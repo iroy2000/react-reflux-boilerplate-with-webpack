@@ -5,7 +5,9 @@ development and production ready build process framework out of the box.
 
     - When you develop, it will immediately shows up in browser without refreshing
     - When you build it, it will optimize JS, HTML and image assets for you ( production ready )
-    - Thank you webpack and gulp to make the process painless :)
+    - It also comes with TDD option tasks, will run your test whenever you touch your application files
+    - Minimal setup time and allow you to invest into things that matters
+    - Everything automatic, you just care about development, nothing else \o/ Yeah ?!
 
 What is supported  out of the box ?
 
