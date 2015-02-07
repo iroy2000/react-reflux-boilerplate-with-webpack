@@ -75,14 +75,16 @@ __Note__ : assets/ and src/ will be compiled into public/ folder when you run bu
 ### Suggested Workflow
 
 * After you check out the repo, I will usually do the following
-** Run 'gulp watch'  ( or npm start )
-** If you prefer TDD, do 'gulp tdd' instead
-** Go your browser and go to 'localhost:8888'  ( port is configurable )
-** Make code changes
-** Watch your code changes reflect on browser without refreshing
-** Repeat your development steps
-** Run 'gulp build' when you want to generate production level code
-** That's very easy, isn't it? 
+1. Run 'gulp dev'  ( or npm start )
+2. If you prefer TDD, do 'gulp dev-tdd' instead
+3. Go your browser and go to 'localhost:8888'  ( port is configurable )
+4. Make code changes
+5. Watch your code changes reflect on browser without refreshing
+6. Repeat your development steps
+
+Run 'gulp build' when you want to generate production level code
+
+That's very easy, isn't it? 
 
 ### Extra Note
 
