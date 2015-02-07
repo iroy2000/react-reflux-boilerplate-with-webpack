@@ -8,18 +8,43 @@ minifyHTML = require 'gulp-minify-html'
 gulpFilter = require 'gulp-filter'
 
 # webpack modules
-webpack = require("webpack")
-WebpackDevServer = require("webpack-dev-server")
-webpackConfig = require("./webpack.config.js")
-webpackProductionConfig = require("./webpack.production.config.js")
+webpack = require 'webpack'
+WebpackDevServer = require 'webpack-dev-server'
+webpackConfig = require './webpack.config.js'
+webpackProductionConfig = require './webpack.production.config.js'
 
+# util
 map = require 'map-stream'
 touch = require 'touch'
 _ = require 'lodash'
 nib = require 'nib'
 
+# integrate test and tdd 
+jest = require 'jest-cli'
+
+JEST_CONFIG = { 
+    rootDir: '.'
+    scriptPreprocessor: 'preprocessor.js',
+    unmockedModulePathPatterns: ['node_modules/react'],
+    testFileExtensions: ['coffee', 'js', 'cjsx'],
+    moduleFileExtensions: ['js', 'json', 'coffee', 'cjsx']
+}
+
+# your webpack-dev-server port, default 8888
+DEV_PORT = '8888'
+
 # Load plugins
 $ = require('gulp-load-plugins')()
+
+gulp.task('tdd', (done) ->
+  gulp.watch([ JEST_CONFIG.rootDir + "/src/scripts/**/*.cjsx" ], [ 'test' ]);
+)
+
+gulp.task('test', (done) ->
+  jest.runCLI({ config : JEST_CONFIG }, ".", () ->
+    done()
+  )
+)
 
 # CSS
 gulp.task('css', ->
@@ -99,9 +124,9 @@ gulp.task "webpack-dev-server", (callback) ->
     watchDelay: 100
     noInfo: true
   )
-  devServer.listen 8888, "0.0.0.0", (err) ->
+  devServer.listen DEV_PORT, "0.0.0.0", (err) ->
     throw new gutil.PluginError("webpack-dev-server", err) if err
-    gutil.log "[webpack-dev-server]", "http://localhost:8888"
+    gutil.log "[webpack-dev-server]", "http://localhost:"+DEV_PORT
     callback()
 
   return
@@ -114,3 +139,4 @@ gulp.task 'build', ['webpack:build', 'css', 'copy-assets-ignore-html', 'minify-h
 gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
   gulp.watch(['src/styles/**'], ['css'])
   gulp.watch(['assets/**'], ['copy-assets'])
+
