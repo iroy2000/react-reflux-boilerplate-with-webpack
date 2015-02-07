@@ -136,7 +136,10 @@ gulp.task 'default', ->
 
 gulp.task 'build', ['webpack:build', 'css', 'copy-assets-ignore-html', 'minify-html']
 
-gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
+gulp.task 'dev', ['css', 'copy-assets', 'webpack-dev-server'], ->
   gulp.watch(['src/styles/**'], ['css'])
   gulp.watch(['assets/**'], ['copy-assets'])
+
+gulp.task 'dev-tdd', ['dev', 'tdd']
+  
 

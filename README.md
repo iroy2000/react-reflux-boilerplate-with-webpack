@@ -52,10 +52,10 @@ $ npm test   // run Jest cli
 __The Gulp way__
 
 ```sh
-$ gulp watch  // start a dev server
+$ gulp dev  // start a dev server
+$ gulp dev-tdd // start a dev server with automatic test running
 $ gulp build  // build a production version
-$ gulp test   // run test
-$ gulp tdd    // start a dev server, watch files and run test
+$ gulp test   // run test manually
 ```
 
 Please see __Gotcha__ section if you run into problems :/
