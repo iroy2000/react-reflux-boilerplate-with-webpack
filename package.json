@@ -32,6 +32,7 @@
     "highlight.js": "^8.4.0",
     "image-webpack-loader": "^1.2.0",
     "imagemin": "^3.1.0",
+    "jeet": "^6.1.2",
     "jest-cli": "^0.2.2",
     "lodash": "^3.1.0",
     "map-stream": "0.0.5",

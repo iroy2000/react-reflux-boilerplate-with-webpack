@@ -12,11 +12,13 @@ development and production ready build process framework out of the box.
 What is supported  out of the box ?
 
     - React
+    - React Router
     - Reflux ( Refactor of Flux )
     - Jest ( Testing framework for React app )
     - Browser Live Reload
     - CoffeeScript
-    - Stylus
+    - Stylus ( CSS pre-processor )
+    - JEET ( Grid system for Stylus )
     - CSS / HTML / JS minification
     - JS code duplication removal during built
     - Image optimization
