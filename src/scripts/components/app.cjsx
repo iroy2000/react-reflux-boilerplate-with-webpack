@@ -1,33 +1,27 @@
 # please pardon me for this too simple code, it is an example on how to use this workflow framework
 React = require('react')
-Link = require('react-router').Link
-RouteHandler = require('react-router').RouteHandler
+{Link, RouteHandler} = require('react-router')
+LocalStorageUtil = require('../utils/LocalStorage')
+LOCAL_STORAGE_PREFIX = 'wff' 
+
+LocalStorageUtil.init(LOCAL_STORAGE_PREFIX)
 
 module.exports = React.createClass
   render: ->
     <div>
-        <div className="row">
-            <div className="col-sm-2">
+        <header className="header">
+            <div className="logo">
                 <svg className="icon-i-roy logo center-block" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-i-roy">'}} />
             </div>
-        </div>
-        <div className="row">
-            <header className="col-sm-9">
-                <ul>
-                    <li className="aboutme">
-                        <Link to="about">About Me</Link>
-                    </li>
-                    <li className="projects">
-                        <Link to="projects">Projects</Link>
-                    </li>
-                    <li className="contact">
-                        <Link to="examples">Examples</Link>
-                    </li>
-                </ul>
-            </header>
-        </div>
-        <div className="clearfix" />
-        <div className="row content">
+            <div className="nav">
+                <Link to="home">Example</Link>
+                <Link to="aboutme">About Me</Link>
+            </div>
+        </header>
+        <section className="page-content">
             <RouteHandler/>
-        </div>
+        </section>
+        <footer>
+            Footer: This is just a sample, a tutorial ~ No Rights Reserved \o/
+        </footer>
     </div>

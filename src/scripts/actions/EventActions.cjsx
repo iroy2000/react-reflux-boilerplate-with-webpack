@@ -1,8 +1,10 @@
 Reflux = require('reflux')
 
 actions = [
-    "greeting"
+    "get"
+    "create"
+    "update"
+    "delete"
 ]
 
 module.exports = Reflux.createActions(actions)
-
