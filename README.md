@@ -115,4 +115,5 @@ alias gulp='node --harmony `which gulp`'
 Now it should both works :)
 
 ### Todo's
-    - Write Tests
+    - Adding Tests
+    - Enhancing demo in the future :)
