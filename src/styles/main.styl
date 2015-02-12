@@ -1,125 +1,151 @@
 @import 'nib'
+@import 'jeet'
 
-// this is just example app
-// will rewrite the whole example app in the future :)
-
-center-block() 
-    display         block
-    margin-left     auto
-    margin-right    auto
+global-reset()
 
 body
-    background url(images/bg.jpg) no-repeat center center fixed
-    background-size cover
+    +below(1050px)
+        margin-left     10px
+        margin-right    20px
 
-.logo
-    border-radius 15px
-    padding 10px
-    width   160px
-    box-shadow 5px 5px 2px 0px rgba(90,90,90,0.75)
+h1
+    font-size 1.5em
+    margin 15px 0            
 
-.msg
-    margin-top 10px
-    padding 20px
-    font-size 40px
+.aboutme
+    line-height 25px
+    p
+        margin-top  15px
 
-header
-    ul
-        list-style none
-        li
-            border-radius: 12px
-            border-bottom-right-radius 5px
-            border-bottom-left-radius  5px
-            width           200px
-            float           left
-            position    relative
-
-            &.aboutme
-            &.projects
-            &.contact
+#container
+    center(1040px)
+    margin-top  15px
+    
+    .header
+        cf()
+        margin-bottom   15px
+        .logo
+            col(2/5)
+            min-width   80px
+            +below(500px)
+                fill    #3a5795
+        .nav
+            col(3/5)
             a
-                display block
-                background    rgb(0,0,0)
-                background    rgba(0,0,0,0.1)      
-                border-top-right-radius 10px
-                border-top-left-radius  10px
-                padding 5px
-            a
+                display inline-block
+                margin-left 5px
+                background-color    black
                 color   #fff
-                text-shadow 2px 2px #666
                 text-decoration none
-                &:active
-                &:visited
+                padding 5px 8px
+                float   right
+            
                 &:hover
-                &:link
+                    background-color    #ddd
+   
+    .page-content
+        margin-top  15px
+        border-top  2px solid black
+        cf()
+
+    .event-input-container
+        margin-top  15px
+        padding 10px 15px 10px 10px
+        border  1px solid #ccc
+        width   340px
+        background-color    #eee
+        col(2/8)
+        +below(800px)
+            col(1)
+            stack()
+            max-width   340px
+            float   left
+
+    .events
+        col(5/8)
+        +below(800px)
+            col(1)
+            stack()
+
+    h3.title
+        background-color #fff
+        display   inline-block
+        padding   5px
+        margin-top    5px
+                
+    .errors
+        padding-bottom  10px
+        color   red
+        .error
+            padding-top 5px
+            padding-bottom  5px
+
+    [name="title"]
+    [name="description"]
+    .submit
+        display block
+        margin-bottom  15px
+
+    [name="title"]
+        col(1)
+
+    [name="description"]
+        height  100px
+        col(1)
+
+    .in-error
+        border-color    tomato
+
+    .list
+        cf()
+        center()
+        .item
+            margin-bottom   15px
+            .header
+                margin-bottom 0
+                padding    5px
+                border 1px solid #3a5795
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                background-color    #3a5795
+                color   #fff
+            .content
+                background-color    #ddd
+                opacity 0.5
+                padding 5px
+                border-left 1px solid #ccc
+                border-right    1px solid #ccc
+                word-wrap   break-word
+                &.editing
+                    background-color    #fff
+            .actions
+                background-color    #ccc
+                padding 5px
+                
+                a
+                    display inline-block
+                    margin-right    10px
+                    font-size   0.9em
+                    background-color    #f07d00
+                    padding 7px 5px 4px
+                    color   #fff
                     text-decoration none
-                    color #fff
-                &:hover
-                    text-shadow none
-                    background rgba(0,0,0,0.3)
+                    border 2px solid #ddd
                     
+                    &:hover
+                        color   #ccc
+ 
+            +mobile()
+                col(1)
+            +tablet()
+                col(1/2, cycle: 2)
+            +desktop()
+                col(1/3, uncycle: 2, cycle: 3)
+            +below(500px)
+                col(1, uncycle: 3)
 
-            .desc
-                padding 5px                
-                background    rgb(255,255,255)
-                background    rgba(255,255,255,0.3)      
-                border-bottom-right-radius 4px
-                border-bottom-left-radius  4px
-
-.content
-    height  60vh
-    background  #fff
-    opacity 0.5
-    & > div 
-        margin-left 55px 
-.icon-i-roy 
-    width   160px    
-    margin  20px 40px
-
-.rw-words
-  text-transform  uppercase
-  span
-    position absolute
-    opacity 0
-    overflow hidden
-    animation rotateWord 18s linear infinite 0s
-    &:nth-child(2)
-      animation-delay 3s
-    &:nth-child(3)
-      animation-delay 6s
-    &:nth-child(4)
-      animation-delay 9s
-    &:nth-child(5)
-      animation-delay 12s
-    &:nth-child(6)
-      animation-delay 15s
-
-@keyframes rotateWord
-    0% 
-         opacity 0
-
-    2%
-        opacity 0
-        -webkit-transform translateY(-30px)
-        transform translateY(-30px)
-
-    5%
-        opacity 1
-        -webkit-transform translateY(0px)
-        transform translateY(0px)
-
-    17%
-        opacity 1
-        -webkit-transform translateY(0px)
-        transform translateY(0px)
-
-    20%
-        opacity 0
-        -webkit-transform translateY(30px)
-        transform translateY(30px)
-
-    80%
-        opacity 0
-
-    100%
-        opacity 0
+footer
+    margin-top  15px
+    margin-bottom   10px
+    padding-top 15px
+    border-top  2px solid black

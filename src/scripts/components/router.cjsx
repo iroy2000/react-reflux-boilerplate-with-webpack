@@ -13,11 +13,10 @@ App = require './app'
 
 routes = (
   <Route handler={App}>
-    <Route name="about" handler={require('./about')} path="/" />
-    <Route name="projects" handler={require('./projects')} path="/projects" />
-    <Route name="examples" handler={require('./examples')} path="/examples" />
+    <Route name="home" handler={require('./pages/home')} path="/" />
+    <Route name="aboutme" handler={require('./pages/aboutme')} path="/aboutme" />
   </Route>
 )
 Router.run(routes, (Handler) ->
-  React.render <Handler/>, document.getElementById("content")
+  React.render <Handler/>, document.getElementById("container")
 )

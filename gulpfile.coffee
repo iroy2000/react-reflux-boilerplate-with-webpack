@@ -20,6 +20,7 @@ touch = require 'touch'
 _ = require 'lodash'
 nib = require 'nib'
 jeet = require 'jeet'
+rupture = require 'rupture'
 
 # integrate test and tdd 
 jest = require 'jest-cli'
@@ -46,7 +47,7 @@ $ = require('gulp-load-plugins')()
 gulp.task('css', ->
   gulp.src(['src/styles/*.styl'])
     .pipe(stylus({
-        use: [nib(), jeet()]
+        use: [nib(), jeet(), rupture()]
         compress: true 
     }))
     .on('error', (err) ->
