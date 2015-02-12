@@ -22,6 +22,6 @@ module.exports = React.createClass
             <RouteHandler/>
         </section>
         <footer>
-            Footer: This is just a sample, a tutorial ~ No Rights Reserved \o/
+            [ <b>Note</b> ]  This page is developed with <b>React, Reflux, Stylus, CoffeeScript and packaged with Gulp and Webpack</b> as a demo site. Go to "About Me" for more info.  Enjoy ~ \o/
         </footer>
     </div>
