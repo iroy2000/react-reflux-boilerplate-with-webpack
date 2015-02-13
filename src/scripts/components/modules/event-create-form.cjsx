@@ -1,8 +1,9 @@
-React = require('react')
+React = require('react/addons')
 EventActions = require('../../actions/EventActions')
 _ = require('lodash')
 
 module.exports = React.createClass
+    mixins: [React.addons.LinkedStateMixin]
     getInitialState: ->
         {
             error: false
@@ -18,25 +19,25 @@ module.exports = React.createClass
     handleOnSubmit:(e) ->
         e.preventDefault()
 
-        titleDOM = @refs.title.getDOMNode()
-        descriptionDOM = @refs.description.getDOMNode()
+        title = @state.title
+        description = @state.description
         
         titleErrorClass = ''
         descriptionErrorClass = ''
 
         error = []
 
-        if not titleDOM.value
+        if not title
             error.push('Title is required')  
             titleErrorClass = 'in-error'
         else
-            matches = _.matches({ 'name': titleDOM.value })
+            matches = _.matches({ 'name': title })
             
             if _.size(_.find(@props.items, matches)) > 0
                 error.push('Title needs to be unique')
                 titleErrorClass = 'in-error'
 
-        if not descriptionDOM.value
+        if not description
             error.push('Description is required')
             descriptionErrorClass = 'in-error'
 
@@ -52,18 +53,18 @@ module.exports = React.createClass
 
         if error.length > 0
             state.error = true
-            @setState(state)
         else
             EventActions.create({
-                name: titleDOM.value
-                description: descriptionDOM.value
+                name: title
+                description: description
             })
 
-            titleDOM.value = ''
-            descriptionDOM.value = ''
-
+            state.title = ''
+            state.description = ''
             state.error = false
-            @setState(state)
+
+
+        @setState(state)
 
     render: ->
 
@@ -82,9 +83,23 @@ module.exports = React.createClass
                     {errorList}
                 </div>
                 <form className="event-input" ref="event-input-form">
-                    <input name="title" ref="title" className={@state.container.className.title} placeholder="Enter a Title" />
-                    <textarea name="description" ref="description" className={@state.container.className.description} placeholder="Enter a Description" />
-                    <input className="btn submit" type="submit" value="Create Event" onClick={@handleOnSubmit} />
+                    <input 
+                        name="title" 
+                        className={@state.container.className.title} 
+                        placeholder="Enter a Title" 
+                        valueLink={@linkState('title')} />
+
+                    <textarea 
+                        name="description" 
+                        className={@state.container.className.description} 
+                        placeholder="Enter a Description" 
+                        valueLink={@linkState('description')} />
+
+                    <input 
+                        className="btn submit" 
+                        type="submit" 
+                        value="Create Event" 
+                        onClick={@handleOnSubmit} />
                 </form>
             </div>
         )

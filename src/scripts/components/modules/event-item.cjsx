@@ -1,9 +1,11 @@
-React = require('react')
+React = require('react/addons')
 
 module.exports = React.createClass
+    mixins: [React.addons.LinkedStateMixin]
     getInitialState: ->
         {
             isInEditPhase: false
+            description: @props.description
         }
 
     onEditRequest: (e) ->
@@ -11,33 +13,34 @@ module.exports = React.createClass
 
         @setState({
             isInEditPhase: true
-        })
+        }, () -> @refs.content.getDOMNode().focus())
     
     onEdit: (e) ->
         e.preventDefault()
-        
-        @props.editItem({
-            name: @props.name
-            description: @refs.content.getDOMNode().innerHTML
-        })
 
         @setState({
             isInEditPhase: false
-        })
+        }, () ->
+            @props.editItem({
+                name: @props.name
+                description: @state.description
+            })
+        )
 
     render: ->
-        editState    = <a href="#" onClick={@onEditRequest}>Edit</a>
-        contentState = <div ref="content" className="content">{@props.description}</div>
+        editState    = <svg onClick={@onEditRequest} dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-edit">'}} />
+        contentState = <div className="content-wrapper"><textarea ref="content" className="content" disabled="disabled" value={@props.description} /></div>
 
-        if @state.isInEditPhase 
-           editState    = <a href="#" onClick={@onEdit}>Submit</a>
-           contentState = <div ref="content" className="content editing" contentEditable="true">{@props.description}</div>
-   
+        if @state.isInEditPhase
+           editState    = <svg onClick={@onEdit} dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-ok">'}} />
+           contentState = <div className="content-wrapper"><textarea ref="content" className="content editing" valueLink={@linkState('description')} /></div>
+
         <div className="item">
             <div className="header">{@props.name}</div>
             {contentState}
             <div className="actions">
-                <a href="#" onClick={@props.onDelete}>Remove</a>
+                <svg onClick={@props.onDelete} dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-remove">'}} />
                 {editState}
             </div>
         </div>
+

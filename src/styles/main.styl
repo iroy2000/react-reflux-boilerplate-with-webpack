@@ -12,15 +12,10 @@ h1
     font-size 1.5em
     margin 15px 0            
 
-.aboutme
-    line-height 25px
-    p
-        margin-top  15px
-
 #container
     center(1040px)
     margin-top  15px
-    
+
     .header
         cf()
         margin-bottom   15px
@@ -48,6 +43,11 @@ h1
         border-top  2px solid black
         cf()
 
+        .aboutme
+            line-height 25px
+            p
+                margin-top  15px
+
     .event-input-container
         margin-top  15px
         padding 10px 15px 10px 10px
@@ -66,6 +66,20 @@ h1
         +below(800px)
             col(1)
             stack()
+
+        .list-enter
+            opacity 0.01
+            transition opacity .5s ease-in
+
+        .list-enter-active
+            opacity 1
+
+        .list-leave
+            opacity 1
+            transition opacity .5s ease-in
+
+        .list-leave-active
+            opacity 0.01
 
     h3.title
         background-color #fff
@@ -101,6 +115,11 @@ h1
         center()
         .item
             margin-bottom   15px
+            textarea.content
+                width 95%
+                border  none
+                height  150px
+                
             .header
                 margin-bottom 0
                 padding    5px
@@ -109,31 +128,23 @@ h1
                 border-top-right-radius: 5px;
                 background-color    #3a5795
                 color   #fff
-            .content
-                background-color    #ddd
-                opacity 0.5
-                padding 5px
+            
+            .content-wrapper
                 border-left 1px solid #ccc
                 border-right    1px solid #ccc
-                word-wrap   break-word
+
+            .content
+                opacity 0.5
+                padding 5px
                 &.editing
                     background-color    #fff
             .actions
                 background-color    #ccc
                 padding 5px
-                
-                a
-                    display inline-block
-                    margin-right    10px
-                    font-size   0.9em
-                    background-color    #f07d00
-                    padding 7px 5px 4px
-                    color   #fff
-                    text-decoration none
-                    border 2px solid #ddd
-                    
-                    &:hover
-                        color   #ccc
+
+                svg
+                    height  22px
+                    width   22px
  
             +mobile()
                 col(1)
@@ -145,6 +156,7 @@ h1
                 col(1, uncycle: 3)
 
 footer
+    line-height 25px
     margin-top  15px
     margin-bottom   10px
     padding-top 15px

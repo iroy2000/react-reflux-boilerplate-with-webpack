@@ -1,6 +1,7 @@
-React = require('react')
+React = require('react/addons')
 EventItem = require('./event-item')
 EventActions = require('../../actions/EventActions')
+ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 module.exports = React.createClass
 
@@ -13,18 +14,20 @@ module.exports = React.createClass
                 currentProps.removeItem(item)
 
             <EventItem 
-                onDelete={deleteCallback} 
+                onDelete={deleteCallback}
+                item={item}
                 editItem={currentProps.editItem}
                 name={item.name} 
-                description={item.description} 
-                expire="--" />
+                description={item.description} />
         )
          
         return (              
             <div className="events">
                 <h1>{@props.title}</h1>
                 <div className="list">
-                    {list}
+                    <ReactCSSTransitionGroup transitionName="list">
+                        {list}
+                    </ReactCSSTransitionGroup>
                 </div>
             </div>
         )
