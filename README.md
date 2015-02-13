@@ -59,7 +59,7 @@ __The Gulp way__
 
 ```sh
 $ gulp dev  // start a dev server
-$ gulp dev-tdd // start a dev server with automatic test running
+$ gulp tdd // start a dev server with automatic test running
 $ gulp build  // build a production version
 $ gulp test   // run test manually
 $ gulp clean  // in case you need to clean the public folder
@@ -82,7 +82,7 @@ __Note__ : assets/ and src/ will be compiled into public/ folder when you run bu
 After you check out the repo, I will usually do the following :-
 
 1. Run 'gulp dev'  ( or npm start )
-2. If you prefer TDD, do 'gulp dev-tdd' instead
+2. If you prefer TDD, do 'gulp tdd' instead
 3. Go your browser and go to 'localhost:8888'  ( port is configurable )
 4. Make code changes
 5. Watch your code changes reflect on browser without refreshing
