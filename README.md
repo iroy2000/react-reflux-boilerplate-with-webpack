@@ -1,6 +1,6 @@
 # React Reflux Workflow Boilerplate
 
-React-Reflux-Boilerplate-with-Webpack is a work flow framework that make life easier for developers by providing a
+"React Reflux Workflow Boilerplate" is a workflow framework that make life easier for developers by providing a
 development and production ready build process framework out of the box. 
 
     - When you develop, it will immediately shows up in browser without refreshing
