@@ -14,14 +14,15 @@ What is supported  out of the box ?
     - React
     - React Router
     - Reflux ( Refactor of Flux )
-    - Jest ( Testing framework for React app )
-    - Browser Live Reload
     - CoffeeScript
+    - LoDash
     - Stylus ( CSS pre-processor )
     - JEET ( Grid system for Stylus )
-    - CSS / HTML / JS minification
+    - Rupture ( Media Query support for Stylus )
+    - Jest ( Testing framework for React app )
+    - Browser Live Reload during development
+    - CSS / HTML / JS minification / Image optimization when built
     - JS code duplication removal during built
-    - Image optimization
     - Optional TDD task to perform auto testing when file changes
     
 If you are interested, please read the __package.json__ file for all installed modules / plugins.
