@@ -95,7 +95,7 @@ That's very easy, isn't it?
 ### Extra Note
 
 If you want to update the npm modules, execute the following commands, it will update all the modules for you.
-Be careful though, if your application has dependecies on certain version, it might break your code ~  \o/ Yeah!
+Be careful though, if your application has dependencies on certain version, it might break your code ~  \o/ Yeah!
 
 ```sh
 npm install -g npm-check-updates
@@ -115,6 +115,11 @@ alias gulp='node --harmony `which gulp`'
 
 Now it should both works :)
 
+### About the demo in this repo
+Even though this repo is about the workflow boilerplate and how to make your life easier during development,
+the React and Reflux demo are also good if you are still learning those technologies. Feel free to send me message or
+open an issue if you have any questions.
+
 ### Todo's
-    - Adding Tests
+    - Adding Tests :/
     - Enhancing demo in the future :)
