@@ -88,9 +88,17 @@ After you check out the repo, I will usually do the following :-
 5. Watch your code changes reflect on browser without refreshing
 6. Repeat your development steps
 
-Run 'gulp build' when you want to generate production level code
+Once you are ready to deploy, do the following :-
 
-That's very easy, isn't it? 
+1. Run 'gulp clean' in case your built has old css
+2. Run 'gulp build' when you want to generate production level code
+
+That's very easy, isn't it?
+
+### Live Demo
+Please visit my github page, it is start from scratch by using this workflow boilerplate
+
+http://iroy2000.github.io/
 
 ### Extra Note
 
@@ -122,4 +130,4 @@ open an issue if you have any questions.
 
 ### Todo's
     - Adding Tests :/
-    - Enhancing demo in the future :)
+    - Adding more examples
