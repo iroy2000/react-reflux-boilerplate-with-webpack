@@ -10,18 +10,35 @@ module.exports = React.createClass
   render: ->
     <div>
         <header className="header">
-            <div className="logo">
+            <div className="logo-container">
                 <svg className="icon-i-roy logo center-block" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-i-roy">'}} />
             </div>
-            <div className="nav">
-                <Link to="home">Example</Link>
-                <Link to="aboutme">About Me</Link>
+            <div className="banner">
+                <div class="banner">
+                    <p>This page is created with ♥ by using React + Reflux + Stylus</p>
+                    <p dangerouslySetInnerHTML={{__html: 'My name is Roy and I am a Developer <span>|</span>'}}></p>
+                </div>
             </div>
         </header>
-        <section className="page-content">
-            <RouteHandler/>
-        </section>
+        <div className="container">
+            <div className="nav" activeClassName="active">
+                <Link to="aboutme">
+                    <svg className="icon-aboutme" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-aboutme">'}} />
+                    About Me
+                </Link>
+                <Link to="examples" activeClassName="active">
+                    <svg className="icon-examples" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-examples">'}} />
+                    Examples
+                </Link>
+            </div>
+            <section className="page-content">
+                <RouteHandler/>
+            </section>
+        </div>
         <footer>
-            [ <b>Note</b> ]  This page is developed with <b>React, Reflux, Stylus, CoffeeScript and packaged with Gulp and Webpack</b> as a demo site. Go to "About Me" for more info.  Enjoy ~ \o/
+            My name is Roy and I am a Developer  ~♡ⓛⓞⓥⓔ♡~
+            <p>
+                This page is developed with React / Reflux Workflow Boilerplate  »»--------------► https://github.com/iroy2000/react-reflux-boilerplate-with-webpack
+            </p>
         </footer>
     </div>

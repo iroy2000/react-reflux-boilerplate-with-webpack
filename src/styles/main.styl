@@ -1,7 +1,18 @@
 @import 'nib'
 @import 'jeet'
 
+@import './banner'
+@import './form-interaction-example'
+@import './generic-content'
+
 global-reset()
+
+html
+  height 102%
+  overflow-y scroll
+
+strong
+  font-weight bold
 
 body
     +below(1050px)
@@ -9,8 +20,16 @@ body
         margin-right    20px
 
 h1
-    font-size 1.5em
-    margin 15px 0            
+h2
+    font-family Helvetica,Arial,sans-serif
+    font-weight bold
+    padding-bottom  15px
+    padding-top 15px
+    vertical-align baseline
+
+h1
+  font-size 1.5em
+
 
 #container
     center(1040px)
@@ -18,142 +37,95 @@ h1
 
     .header
         cf()
+        background url(../assets/images/bg_pattern.png)
         margin-bottom   15px
+        .logo-container
+          col(3/12)
+          width   140px
+          background #fff
+          opacity 0.2
+          padding 10px
         .logo
-            col(2/5)
-            min-width   80px
-            +below(500px)
-                fill    #3a5795
-        .nav
-            col(3/5)
-            a
-                display inline-block
-                margin-left 5px
-                background-color    black
-                color   #fff
-                text-decoration none
-                padding 5px 8px
-                float   right
-            
-                &:hover
-                    background-color    #ddd
-   
-    .page-content
-        margin-top  15px
-        border-top  2px solid black
-        cf()
+            fill #bbb
 
+        .banner
+            col(9/12)
+            float right
+            +below(660px)
+              col(1)
+
+    .container
+      cf()
+      margin-top  15px
+
+      .page-content
+        col(6/8)
+        +below(667px)
+          margin-left  15px
+          width 100%
+        .section
+          margin-bottom 15px
+
+        .intro
         .aboutme
-            line-height 25px
-            p
-                margin-top  15px
+          line-height 25px
+          position relative
+          padding  15px
 
-    .event-input-container
-        margin-top  15px
-        padding 10px 15px 10px 10px
-        border  1px solid #ccc
-        width   340px
-        background-color    #eee
+          p
+            margin-top  15px
+
+          &:after
+            content: "";
+            background url(../assets/images/wac.jpg)
+            opacity 0.2
+            background-size cover
+            top 0
+            left 0
+            bottom 0
+            right 0
+            position absolute
+            z-index -1
+
+    .nav
         col(2/8)
-        +below(800px)
-            col(1)
-            stack()
-            max-width   340px
-            float   left
 
-    .events
-        col(5/8)
-        +below(800px)
-            col(1)
-            stack()
+        +below(667px)
+          stack()
+          margin-top  -18px
+          padding-top 10px
+          margin-bottom 10px
 
-        .list-enter
-            opacity 0.01
-            transition opacity .5s ease-in
+        a
+          border-bottom  2px dashed tomato
+          display block
+          padding-left 5px
+          color   #ccc
+          text-decoration none
+          padding 5px 8px
+          width  100%
+          svg
+          span  
+            display inline-block
+          svg
+            height 30px
+            width 30px
+            fill #ccc
 
-        .list-enter-active
-            opacity 1
+          span
+            position  relative
+            top  -10px
+            margin-left  10px
 
-        .list-leave
-            opacity 1
-            transition opacity .5s ease-in
+          &.active
+          &:hover
+            color tomato
+            svg
+              fill tomato
 
-        .list-leave-active
-            opacity 0.01
+          &.active
+            cursor default
 
-    h3.title
-        background-color #fff
-        display   inline-block
-        padding   5px
-        margin-top    5px
-                
-    .errors
-        padding-bottom  10px
-        color   red
-        .error
-            padding-top 5px
-            padding-bottom  5px
-
-    [name="title"]
-    [name="description"]
-    .submit
-        display block
-        margin-bottom  15px
-
-    [name="title"]
-        col(1)
-
-    [name="description"]
-        height  100px
-        col(1)
-
-    .in-error
-        border-color    tomato
-
-    .list
-        cf()
-        center()
-        .item
-            margin-bottom   15px
-            textarea.content
-                width 95%
-                border  none
-                height  150px
-                
-            .header
-                margin-bottom 0
-                padding    5px
-                border 1px solid #3a5795
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                background-color    #3a5795
-                color   #fff
-            
-            .content-wrapper
-                border-left 1px solid #ccc
-                border-right    1px solid #ccc
-
-            .content
-                opacity 0.5
-                padding 5px
-                &.editing
-                    background-color    #fff
-            .actions
-                background-color    #ccc
-                padding 5px
-
-                svg
-                    height  22px
-                    width   22px
- 
-            +mobile()
-                col(1)
-            +tablet()
-                col(1/2, cycle: 2)
-            +desktop()
-                col(1/3, uncycle: 2, cycle: 3)
-            +below(500px)
-                col(1, uncycle: 3)
 
 footer
     line-height 25px

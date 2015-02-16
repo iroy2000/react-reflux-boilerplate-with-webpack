@@ -1,0 +1,31 @@
+.banner
+  background #000
+  padding-top 10px
+  padding-bottom 20px
+
+  +below(400px)
+    min-width 355px
+
+  +below(950px)
+    line-height 35px
+
+  p
+    color lime
+    font-family "Courier"
+    font-size 20px
+    margin 10px 0 0 10px
+    overflow hidden
+
+    a
+      color lime
+      text-decoration none
+
+  span
+    animation blink 1s infinite
+
+@keyframes blink
+  to
+    opacity .0
+
+::selection
+  background #000

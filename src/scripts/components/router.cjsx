@@ -6,15 +6,19 @@ React = require 'react'
 window.React = React
 
 Router = require('react-router')
-Route = Router.Route
+{Route, NotFoundRoute} = Router
+
 
 # Require route components.
 App = require './app'
 
+Examples = require './pages/examples'
+
 routes = (
   <Route handler={App}>
-    <Route name="home" handler={require('./pages/home')} path="/" />
+    <Route name="examples" handler={Examples} path="/" />
     <Route name="aboutme" handler={require('./pages/aboutme')} path="/aboutme" />
+    <NotFoundRoute handler={Examples} />
   </Route>
 )
 Router.run(routes, (Handler) ->

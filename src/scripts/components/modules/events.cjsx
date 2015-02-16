@@ -20,7 +20,10 @@ module.exports = React.createClass
                 name={item.name} 
                 description={item.description} />
         )
-         
+
+        if @props.items.length <= 0
+            list = <div>You have no notes currently, please create one.</div>
+
         return (              
             <div className="events">
                 <h1>{@props.title}</h1>

@@ -1,0 +1,110 @@
+.form-interaction-example
+    cf()
+    .event-input-container
+        margin-top  15px
+        padding 10px 15px 10px 10px
+        border  1px solid #ccc
+        width   340px
+        background-color    #eee
+        col(2/8)
+        +below(800px)
+            col(1)
+            stack()
+            max-width   340px
+            float   left
+
+    .events
+        col(5/8)
+        +below(800px)
+            col(1)
+            stack()
+
+        .list-enter
+            opacity 0.01
+            transition opacity .5s ease-in
+
+        .list-enter-active
+            opacity 1
+
+        .list-leave
+            opacity 1
+            transition opacity .5s ease-in
+
+        .list-leave-active
+            opacity 0.01
+
+    h3.title
+        display   inline-block
+        padding   5px
+        margin-top    5px
+
+    .errors
+        padding-bottom  10px
+        color   red
+        .error
+            padding-top 5px
+            padding-bottom  5px
+
+    [name="title"]
+    [name="description"]
+    .submit
+        display block
+        margin-bottom  15px
+        float left
+
+    [name="title"]
+        col(1)
+
+    [name="description"]
+        height  100px
+        col(1)
+
+    .in-error
+        border-color    tomato
+
+    .list
+        cf()
+        center()
+        .item
+            margin-bottom   15px
+            textarea.content
+                width   95%
+                border  none
+                height  150px
+                resize  none
+
+            .header
+                margin-bottom 0
+                padding    5px
+                border 1px solid #3a5795
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                background-color    #3a5795
+                color   #eee
+
+            .content-wrapper
+                border-left 1px solid #ccc
+                border-right    1px solid #ccc
+                margin-top -15px
+
+            .content
+                opacity 0.5
+                padding 5px
+                &.editing
+                    background-color    #fff
+            .actions
+                background-color    #ccc
+                padding 5px
+
+                svg
+                    height  22px
+                    width   22px
+
+            +mobile()
+                col(1)
+            +tablet()
+                col(1/2, cycle: 2)
+            +desktop()
+                col(1/3, uncycle: 2, cycle: 3)
+            +below(500px)
+                col(1, uncycle: 3)
