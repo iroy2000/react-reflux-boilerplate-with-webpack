@@ -1,12 +1,16 @@
 # please pardon me for this too simple code, it is an example on how to use this workflow framework
-React = require('react')
-{Link, RouteHandler} = require('react-router')
+React = require('react/addons')
+Router = require('react-router')
+{ Route, RouteHandler, Link } = Router
 LocalStorageUtil = require('../utils/LocalStorage')
+# TransitionGroup = React.addons.CSSTransitionGroup
+
 LOCAL_STORAGE_PREFIX = 'wff' 
 
 LocalStorageUtil.init(LOCAL_STORAGE_PREFIX)
 
 module.exports = React.createClass
+  # mixins: [ Router.State ]
   render: ->
     <div>
         <header className="header">
@@ -32,7 +36,7 @@ module.exports = React.createClass
                 </Link>
             </div>
             <section className="page-content">
-                <RouteHandler/>
+                <RouteHandler />
             </section>
         </div>
         <footer>
