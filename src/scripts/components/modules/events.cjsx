@@ -24,7 +24,7 @@ module.exports = React.createClass
                     description={item.description} />
             )
 
-        return (              
+        return (
             <div className="events">
                 <h1>{@props.title}</h1>
                 <div className="list">

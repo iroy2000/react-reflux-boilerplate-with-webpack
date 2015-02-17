@@ -1,7 +1,7 @@
 # React Reflux Workflow Boilerplate
 
 "React Reflux Workflow Boilerplate" is a workflow framework that make life easier for developers by providing a
-development and production ready build process framework out of the box. 
+development and production ready build process framework out of the box.
 
     - When you develop, it will immediately shows up in browser without refreshing
     - When you build it, it will optimize JS, HTML and image assets for you ( production ready )
@@ -24,22 +24,47 @@ What is supported  out of the box ?
     - CSS / HTML / JS minification / Image optimization when built
     - JS code duplication removal during built
     - Optional TDD task to perform auto testing when file changes
-    
+
 If you are interested, please read the __package.json__ file for all installed modules / plugins.
 
 
 ### Installation
 
-You must have npm installed gloablly before running the following command :- 
+You must have npm installed gloablly before running the following command :-
 
 ```sh
 $ npm install
 $ npm start
 ```
 
-Yes, that's it!! You don't like that??  
+Yes, that's it!! You don't like that??
 
-Now open your broswer and go to 'localhost:8888/' 
+Then you should see something similar in your terminal
+
+```sh
+[23:06:33] Requiring external module coffee-script/register
+[23:06:34] Using gulpfile ~/labs/react-reflux-boilerplate-with-webpack/gulpfile.coffee
+[23:06:34] Starting 'css'...
+[23:06:34] Starting 'copy-assets'...
+[23:06:34] Starting 'webpack-dev-server'...
+[23:06:34] [webpack-dev-server] http://localhost:8888
+[23:06:34] Finished 'webpack-dev-server' after 22 ms
+[23:06:35] all files 17.62 kB
+[23:06:36] Finished 'css' after 1.39 s
+[23:06:36] all files 52.8 kB
+[23:06:36] Finished 'copy-assets' after 1.77 s
+[23:06:36] Starting 'dev'...
+[23:06:36] Finished 'dev' after 8.02 ms
+
+```
+
+Now open your broswer and go to 'localhost:8888/'
+
+!! important !! If it complains about cannot find gulp command, try to install gulp globally instead
+
+```sh
+npm install --global gulp
+```
 
 ### Commands
 
@@ -47,7 +72,7 @@ There are two ways of starting and building, but the Gulp way has more tasks def
 
 You need to run the following command in the project root, where is the same directoy as package.json
 
-__The Node way__ 
+__The Node way__
 
 ```sh
 $ npm start  // start a dev server
@@ -108,6 +133,12 @@ Be careful though, if your application has dependencies on certain version, it m
 ```sh
 npm install -g npm-check-updates
 npm-check-updates -u
+```
+
+If your OS complains cannot find gulp, please try to install gulp globally instead
+
+```sh
+npm install --global gulp
 ```
 
 ### Gotcha
