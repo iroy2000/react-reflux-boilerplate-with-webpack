@@ -29,6 +29,8 @@ h2
 
 h1
   font-size 1.5em
+  +mobile
+    font-size 1.2em
 
 
 #container
@@ -61,8 +63,9 @@ h1
       .page-content
         col(6/8)
         +below(667px)
-          margin-left  15px
           width 100%
+        +mobile()
+          margin-left  0
         .section
           margin-bottom 15px
 
@@ -105,7 +108,7 @@ h1
           padding 5px 8px
           width  100%
           svg
-          span  
+          span
             display inline-block
           svg
             height 30px
@@ -133,3 +136,6 @@ footer
     margin-bottom   10px
     padding-top 15px
     border-top  2px solid black
+    +mobile()
+      p
+        display  none

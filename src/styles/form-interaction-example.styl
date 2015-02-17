@@ -12,6 +12,8 @@
             stack()
             max-width   340px
             float   left
+        +mobile()
+          width  90%
 
     .events
         col(5/8)
@@ -21,17 +23,29 @@
 
         .list-enter
             opacity 0.01
-            transition opacity .5s ease-in
+            transform   translate(-250px,0)
+            transform   translate3d(-250px,0,0)
 
         .list-enter-active
             opacity 1
+            transform   translate(0,0)
+            transform translate3d(0,0,0)
+            transition-property transform, opacity
+            transition-duration 300ms
+            transition-timing-function cubic-bezier(0.175, 0.665, 0.320, 1), linear
 
         .list-leave
             opacity 1
-            transition opacity .5s ease-in
+            transform   translate(0,0,0)
+            transform translate3d(0,0,0)
+            transition-property transform, opacity
+            transition-duration 300ms
+            transition-timing-function cubic-bezier(0.175, 0.665, 0.320, 1), linear
 
         .list-leave-active
             opacity 0.01
+            transform   translate(250px,0)
+            transform translate3d(250px,0,0)
 
     h3.title
         display   inline-block
