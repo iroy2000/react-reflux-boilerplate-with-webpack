@@ -38,36 +38,39 @@ h1
     margin-top  15px
 
     .header
-        cf()
+      cf()
+      box-shadow inset 1px 1px 50px 0px rgba(0,0,0,0.75)
+      background #B03500 url("../assets/images/overlay.png") repeat
+      .logo-container
+        center(400px)
+        padding-top 20px
+        padding-bottom 20px
+        text-align center
+        .logo
+          fill #fff
+          display block
+          margin 0 auto
+
+    .item
+      .header
         background url(../assets/images/bg_pattern.png)
         margin-bottom   15px
-        .logo-container
-          col(3/12)
-          width   140px
-          background #fff
-          opacity 0.2
-          padding 10px
-        .logo
-            fill #bbb
-
-        .banner
-            col(9/12)
-            float right
-            +below(660px)
-              col(1)
 
     .container
       cf()
       margin-top  15px
 
       .page-content
-        col(6/8)
+        col(1)
         +below(667px)
           width 100%
         +mobile()
           margin-left  0
         .section
           margin-bottom 15px
+          padding 15px
+          +mobile()
+            padding 5px
 
         .intro
         .aboutme
@@ -91,51 +94,58 @@ h1
             z-index -1
 
     .nav
-        col(2/8)
-
-        +below(667px)
-          stack()
-          margin-top  -18px
-          padding-top 10px
-          margin-bottom 10px
+        col(1, cycle: 2)
+        padding-bottom 10px
 
         a
-          border-bottom  2px dashed tomato
-          display block
+          +mobile()
+            width 100%
+          display inline-block
           padding-left 5px
-          color   #ccc
+          color   #fff
           text-decoration none
           padding 5px 8px
-          width  100%
           svg
           span
             display inline-block
           svg
             height 30px
             width 30px
-            fill #ccc
+            fill #fff
 
           span
             position  relative
             top  -10px
             margin-left  10px
 
-          &.active
           &:hover
-            color tomato
             svg
-              fill tomato
+              transform rotate(15deg)
 
           &.active
             cursor default
+            border-bottom 2px solid #fff
+            color #fff
+            svg
+              transform rotate(0deg)
+              font-size 1em
 
 
 footer
-    line-height 25px
-    margin-top  15px
+    .large
+      font-size 3em
+    +mobile()
+      padding-left 10px
+      .large
+        font-size 2.3em
+    .content
+      center(400px)
+    color #fff
+    background-color #00838C
+    line-height 45px
     margin-bottom   10px
-    padding-top 15px
-    border-top  2px solid black
+    padding-top 25px
+    padding-bottom 25px
     +mobile()
       p
         display  none

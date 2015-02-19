@@ -1,5 +1,21 @@
 .form-interaction-example
     cf()
+    .autosuggest-component
+      background-color #eee
+      padding 15px
+      border 1px solid #ccc
+      input
+      width 90%
+
+      input
+        width 100%
+
+      +mobile()
+        background-color transparent
+        border none
+        padding-left 0
+        margin-bottom -20px
+
     .event-input-container
         margin-top  15px
         padding 10px 15px 10px 10px
@@ -13,7 +29,7 @@
             max-width   340px
             float   left
         +mobile()
-          width  90%
+          width 94%
 
     .events
         col(5/8)

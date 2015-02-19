@@ -5,6 +5,7 @@ actions = [
     "create"
     "update"
     "delete"
+    "search"
 ]
 
 module.exports = Reflux.createActions(actions)

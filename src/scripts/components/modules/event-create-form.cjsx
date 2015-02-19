@@ -19,7 +19,7 @@ module.exports = React.createClass
     handleOnSubmit:(e) ->
         e.preventDefault()
 
-        title = @state.title
+        title = @state.title.trim()
         description = @state.description
         
         titleErrorClass = ''

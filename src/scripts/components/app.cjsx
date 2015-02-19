@@ -16,33 +16,30 @@ module.exports = React.createClass
         <header className="header">
             <div className="logo-container">
                 <svg className="icon-i-roy logo center-block" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-i-roy">'}} />
-            </div>
-            <div className="banner">
-                <div class="banner">
-                    <p>This page is created with ♥ by using React + Reflux + Stylus</p>
-                    <p dangerouslySetInnerHTML={{__html: 'My name is Roy and I am a Developer <span>|</span>'}}></p>
+                <div className="banner">
+                    <p dangerouslySetInnerHTML={{__html: 'My name is Roy <br />And I am a Developer <span>_</span>'}}></p>
+                </div>
+                <div className="nav" activeClassName="active">
+                    <Link to="aboutme">
+                        <svg className="icon-aboutme" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-aboutme">'}} />
+                        About Me
+                    </Link>
+                    <Link to="examples" activeClassName="active">
+                        <svg className="icon-examples" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-examples">'}} />
+                        Examples
+                    </Link>
                 </div>
             </div>
         </header>
         <div className="container">
-            <div className="nav" activeClassName="active">
-                <Link to="aboutme">
-                    <svg className="icon-aboutme" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-aboutme">'}} />
-                    About Me
-                </Link>
-                <Link to="examples" activeClassName="active">
-                    <svg className="icon-examples" dangerouslySetInnerHTML={{__html: '<use xlink:href="#icon-examples">'}} />
-                    Examples
-                </Link>
-            </div>
             <section className="page-content">
                 <RouteHandler />
             </section>
         </div>
         <footer>
-            My name is Roy and I am a Developer  ~♡ⓛⓞⓥⓔ♡~
-            <p>
-                This page is developed with React / Reflux Workflow Boilerplate  »»--------------► https://github.com/iroy2000/react-reflux-boilerplate-with-webpack
-            </p>
+            <div className="content">
+                My name is Roy and I am a Developer
+                <div className="large">~♡ⓛⓞⓥⓔ♡~</div>
+            </div>
         </footer>
     </div>

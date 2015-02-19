@@ -1,6 +1,8 @@
 Reflux = require('reflux')
 EventActions = require('../actions/EventActions')
 LocalStorageUtil =  require('../utils/LocalStorage')
+_ = require 'lodash'
+
 key = 'sample-events'
 
 module.exports = Reflux.createStore
@@ -26,3 +28,16 @@ module.exports = Reflux.createStore
 
     onDelete: (event) ->
         return false
+
+    onSearch: (query) ->
+        items = @get(key)
+        result  = []
+
+        if query == false
+            @trigger items
+        else
+            result = _.filter(items, (item) ->
+                item.name.indexOf(query) > -1
+            );
+
+            @trigger result

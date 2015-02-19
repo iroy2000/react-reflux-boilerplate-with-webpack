@@ -3,6 +3,7 @@ Reflux = require('reflux')
 _ = require('lodash')
 SampleEvents = require('../../modules/events')
 Form = require('../../modules/event-create-form')
+SearchBox = require('../../modules/event-search')
 EventStore = require('../../../stores/EventStore')
 EventActions = require('../../../actions/EventActions')
 
@@ -34,10 +35,13 @@ module.exports = React.createClass
         EventActions.get()
         
     render: ->
+
         return (
             <div className="section">
-                <h1>React + Reflux Example ( Form Interaction )</h1>
+                <h1>React + Reflux Examples</h1>
+                <h2>( Form Interaction )</h2>
                 <div className="form-interaction-example">
+                    <SearchBox />
                     <Form title="Create a Note" items={@state.items} />
                     <SampleEvents
                         title="My Notes"
