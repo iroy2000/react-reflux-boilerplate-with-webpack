@@ -37,7 +37,8 @@ module.exports = Reflux.createStore
             @trigger items
         else
             result = _.filter(items, (item) ->
-                item.name.indexOf(query) > -1
+
+                item.name.toLowerCase().indexOf(query.toLowerCase()) > -1
             );
 
             @trigger result
