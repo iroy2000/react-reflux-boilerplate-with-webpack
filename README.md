@@ -14,7 +14,9 @@ What is supported  out of the box ?
     - React
     - React Router
     - Reflux ( Refactor of Flux )
-    - CoffeeScript
+    - ES6 ( Harmony ) | if you use .js extension
+    - CoffeeScript | if you use .coffee extension
+    - CJSX ( Coffee JSX ) | if you use .cjsx extension
     - LoDash
     - Stylus ( CSS pre-processor )
     - JEET ( Grid system for Stylus )
