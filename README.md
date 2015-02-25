@@ -1,34 +1,33 @@
 # React Reflux Workflow Boilerplate
 
-"React Reflux Workflow Boilerplate" is a workflow framework that make life easier for developers by providing a
-development and production ready build process framework out of the box.
+"React Reflux Workflow Boilerplate" is a workflow framework that make life easier for developers by providing a development and production ready build process framework out of the box.
 
-    - When you develop, it will immediately shows up in browser without refreshing
-    - When you build it, it will optimize JS, HTML and image assets for you ( production ready )
-    - It also comes with TDD option tasks, will run your test whenever you touch your application files
-    - Minimal setup time and allow you to invest into things that matters
-    - Everything automatic, you just care about development, nothing else \o/ Yeah ?!
+## Features
 
-What is supported  out of the box ?
-
-    - React
-    - React Router
-    - Reflux ( Refactor of Flux )
-    - ES6 ( Harmony ) | if you use .js extension
-    - CoffeeScript | if you use .coffee extension
-    - CJSX ( Coffee JSX ) | if you use .cjsx extension
-    - LoDash
-    - Stylus ( CSS pre-processor )
-    - JEET ( Grid system for Stylus )
-    - Rupture ( Media Query support for Stylus )
-    - Jest ( Testing framework for React app )
-    - Browser Live Reload during development
-    - CSS / HTML / JS minification / Image optimization when built
-    - JS code duplication removal during built
-    - Optional TDD task to perform auto testing when file changes
+* React
+* React Router
+* Reflux ( Refactor of Flux )
+* ES6 ( Harmony ) | if you use .js extension
+* CoffeeScript | if you use .coffee extension
+* CJSX ( Coffee JSX ) | if you use .cjsx extension
+* LoDash
+* Stylus ( CSS pre-processor )
+* JEET ( Grid system for Stylus )
+* Rupture ( Media Query support for Stylus )
+* Jest ( Testing framework for React app )
+* Browser Live Reload during development
+* CSS / HTML / JS minification / Image optimization when built
+* JS code duplication removal during built
+* Optional TDD task to perform auto testing when file changes
 
 If you are interested, please read the __package.json__ file for all installed modules / plugins.
 
+## Benefits
+* During development, it will immediately shows up in browser without refreshing
+* When you build it, it will dedub and optimize JS, HTML and image assets for you ( production quality )
+* It also comes with TDD option tasks, will run your test whenever you touch your application files
+* Minimal setup time and allow you to invest into things that matters
+* Everything automatic, you just care about development, nothing else \o/ Yeah ?!
 
 ### Installation
 
@@ -122,11 +121,6 @@ Once you are ready to deploy, do the following :-
 
 That's very easy, isn't it?
 
-### Live Demo
-Please visit my github page, it is start from scratch by using this workflow boilerplate
-
-http://iroy2000.github.io/
-
 ### Extra Note
 
 If you want to update the npm modules, execute the following commands, it will update all the modules for you.
@@ -158,9 +152,10 @@ Now it should both works :)
 
 ### About the demo in this repo
 Even though this repo is about the workflow boilerplate and how to make your life easier during development,
-the React and Reflux demo are also good if you are still learning those technologies. Feel free to send me message or
-open an issue if you have any questions.
+the React and Reflux demo are also good if you are still learning those technologies. Feel free to send me message or open an issue if you have any questions.
+
+Demo online  http://iroy2000.github.io/
 
 ### Todo's
-    - Adding Tests :/
+    - Adding Real Tests :/
     - Adding more examples
