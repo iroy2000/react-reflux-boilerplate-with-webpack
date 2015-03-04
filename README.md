@@ -7,10 +7,10 @@
 * React
 * React Router
 * Reflux ( Refactor of Flux )
-* ES6 ( Harmony ) | if you use .js extension
+* ES6 ( Harmony ) | if you use .js or .jsx extension
 * CoffeeScript | if you use .coffee extension
 * CJSX ( Coffee JSX ) | if you use .cjsx extension
-* LoDash
+* LoDash  ( Lightweight version of Underscore )
 * Stylus ( CSS pre-processor )
 * JEET ( Grid system for Stylus )
 * Rupture ( Media Query support for Stylus )
@@ -21,6 +21,8 @@
 * Optional TDD task to perform auto testing when file changes
 
 If you are interested, please read the __package.json__ file for all installed modules / plugins.
+
+Feel free to contribute or fork it if you find this repo could help the community.
 
 ## Benefits
 * During development, it will immediately shows up in browser without refreshing
@@ -61,7 +63,7 @@ Then you should see something similar in your terminal
 
 Now open your broswer and go to 'localhost:8888/'
 
-!! important !! If it complains about cannot find gulp command, try to install gulp globally instead
+__!! important !!__ If it complains about cannot find gulp command, try to install gulp globally instead
 
 ```sh
 npm install --global gulp
