@@ -164,12 +164,12 @@ gulp.task 'build', ['webpack:build', 'css', 'copy-assets-ignore-html', 'minify-h
 # description -- start a development server
 gulp.task 'dev', ['copy-assets'], ->
 
-  runSequence('css', 'webpack-dev-server')
+  runSequence('css', 'webpack-dev-server', () ->
+    gulp.watch(['src/styles/**'], ['css'])
+    gulp.watch(['assets/**'], ['copy-assets'])
+  )
 
-  gulp.watch(['src/styles/**'], ['css'])
-  gulp.watch(['assets/**'], ['copy-assets'])
-
-# gulp dev-tdd
+ # gulp dev-tdd
 # description -- start a development server plus test run automatically when cjsx file changes
 gulp.task 'dev-tdd', ['dev', 'tdd']
   
