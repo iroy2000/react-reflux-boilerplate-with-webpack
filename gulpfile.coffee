@@ -1,25 +1,26 @@
 # gulp modules
-gulp = require 'gulp'
-gutil = require 'gulp-util'
-stylus = require 'gulp-stylus'
-minifyHTML = require 'gulp-minify-html'
-del =   require 'del'
+gulp          = require 'gulp'
+runSequence   = require 'run-sequence'
+gutil         = require 'gulp-util'
+stylus        = require 'gulp-stylus'
+minifyHTML    = require 'gulp-minify-html'
+del           = require 'del'
 
 # gulp filter is optional, in case you need it
-gulpFilter = require 'gulp-filter'
+gulpFilter    = require 'gulp-filter'
 
 # webpack modules
-webpack = require 'webpack'
-WebpackDevServer = require 'webpack-dev-server'
-webpackConfig = require './webpack.config.js'
+webpack                 = require 'webpack'
+WebpackDevServer        = require 'webpack-dev-server'
+webpackConfig           = require './webpack.config.js'
 webpackProductionConfig = require './webpack.production.config.js'
 
 # util
-map = require 'map-stream'
-touch = require 'touch'
-_ = require 'lodash'
-nib = require 'nib'
-jeet = require 'jeet'
+map     = require 'map-stream'
+touch   = require 'touch'
+_       = require 'lodash'
+nib     = require 'nib'
+jeet    = require 'jeet'
 rupture = require 'rupture'
 
 # integrate test and tdd 
@@ -161,7 +162,10 @@ gulp.task 'build', ['webpack:build', 'css', 'copy-assets-ignore-html', 'minify-h
 
 # gulp dev
 # description -- start a development server
-gulp.task 'dev', ['css', 'copy-assets', 'webpack-dev-server'], ->
+gulp.task 'dev', ['copy-assets'], ->
+
+  runSequence('css', 'webpack-dev-server')
+
   gulp.watch(['src/styles/**'], ['css'])
   gulp.watch(['assets/**'], ['copy-assets'])
 
@@ -170,5 +174,5 @@ gulp.task 'dev', ['css', 'copy-assets', 'webpack-dev-server'], ->
 gulp.task 'dev-tdd', ['dev', 'tdd']
   
 # gulp clean
-# description -- clean the paths.dest and regenerate css
-gulp.task 'clean', ['clean-dest', 'css'] 
+# description -- clean the paths.dest
+gulp.task 'clean', ['clean-dest']
