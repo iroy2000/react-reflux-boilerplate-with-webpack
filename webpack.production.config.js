@@ -34,18 +34,18 @@ module.exports = {
     new webpack.IgnorePlugin(/vertx/),
     new webpack.IgnorePlugin(/un~$/),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   resolve: {
     // you can now require('myfile') instead of require('myfile.cjsx')
-    extensions: ['', '.js', '.cjsx', '.coffee']
+    extensions: ['', '.js', '.jsx', '.cjsx', '.coffee']
   },
   module: {
     loaders: commonLoaders.concat([
       { test: /\.styl$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus')},
       { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
       { test: /\.coffee$/, loader: 'coffee' },
-      { test: /\.js$/, loader: 'jsx-loader?harmony' }
+      { test: /\.jsx$|\.js$/, loader: 'jsx-loader?harmony' }
     ])
   }
 };
