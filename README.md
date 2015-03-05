@@ -36,11 +36,17 @@ Feel free to contribute or fork it if you find this repo could help the communit
 You must have npm installed gloablly before running the following command :-
 
 ```sh
+$ npm install --global gulp
 $ npm install
-$ npm start
 ```
 
-Yes, that's it!! You don't like that??
+__Yes, that's it!!__ You don't like that??
+
+### First Run
+
+```sh
+$ gulp dev
+```
 
 Then you should see something similar in your terminal
 
@@ -63,11 +69,6 @@ Then you should see something similar in your terminal
 
 Now open your broswer and go to 'localhost:8888/'
 
-__!! important !!__ If it complains about cannot find gulp command, try to install gulp globally instead
-
-```sh
-npm install --global gulp
-```
 
 ### Commands
 
