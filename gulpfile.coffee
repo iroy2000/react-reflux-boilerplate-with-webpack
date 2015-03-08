@@ -53,6 +53,7 @@ gulp.task('css', ->
     }))
     .on('error', (err) ->
       gutil.log err
+      @emit('end')
     )
     .pipe($.size())
     .pipe(gulp.dest(paths.dest))
