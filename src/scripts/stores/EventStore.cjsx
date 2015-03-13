@@ -78,7 +78,7 @@ module.exports = Reflux.createStore
             if @selectedStatus == 'active'
                 result = @__activeFilter(result)
 
-            if @selectedStatus == 'active'
+            if @selectedStatus == 'expire'
                 result = @__expireFilter(result)
 
             @trigger result
