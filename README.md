@@ -31,6 +31,12 @@ Feel free to contribute or fork it if you find this repo could help the communit
 * Minimal setup time and allow you to invest into things that matters
 * Everything automatic, you just care about development, nothing else \o/ Yeah ?!
 
+### About the demo code in this repo
+Even though this repo is about the workflow boilerplate and how to make your life easier during development,
+the React and Reflux demo are also good if you want to learn those technologies. Feel free to send me message or open an issue if you have any questions.
+
+Demo online  http://iroy2000.github.io/
+
 ### Installation
 
 You must have npm installed gloablly before running the following command :-
@@ -153,11 +159,6 @@ alias gulp='node --harmony `which gulp`'
 
 Now it should both works :)
 
-### About the demo in this repo
-Even though this repo is about the workflow boilerplate and how to make your life easier during development,
-the React and Reflux demo are also good if you are still learning those technologies. Feel free to send me message or open an issue if you have any questions.
-
-Demo online  http://iroy2000.github.io/
 
 ### Todo's
     - Adding Real Tests :/
