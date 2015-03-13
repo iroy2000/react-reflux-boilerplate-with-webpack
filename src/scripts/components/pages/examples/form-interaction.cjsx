@@ -4,6 +4,7 @@ _ = require('lodash')
 SampleEvents = require('../../modules/events')
 Form = require('../../modules/event-create-form')
 SearchBox = require('../../modules/event-search')
+Filter = require('../../modules/event-filter')
 EventStore = require('../../../stores/EventStore')
 EventActions = require('../../../actions/EventActions')
 
@@ -32,15 +33,15 @@ module.exports = React.createClass
         EventActions.update(items)
 
     componentDidMount: ->
-        EventActions.get()
+        EventActions.get('active')
         
     render: ->
 
         return (
             <div className="section">
                 <h1>React + Reflux Examples</h1>
-                <h2>( Form Interaction )</h2>
                 <div className="form-interaction-example">
+                    <Filter />
                     <SearchBox />
                     <Form title="Create a Note" items={@state.items} />
                     <SampleEvents

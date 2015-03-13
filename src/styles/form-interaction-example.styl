@@ -1,5 +1,43 @@
 .form-interaction-example
     cf()
+
+    .tips
+      padding 5px
+
+    ul.filter
+      cf()
+      margin-bottom 15px
+      li
+        min-width 100px
+        border 1px solid #ccc
+        float left
+        padding 5px
+        text-align center
+        margin-right 10px
+        cursor pointer
+        +below(520px)
+          min-width 80px
+        +mobile()
+          min-width 80px
+        &:first-child
+          border none
+          min-width 50px
+          text-align left
+          font-weight bold
+          &:hover
+          &.active
+            background-color #fff
+          +below(520px)
+            width 380px
+            max-width 380px
+          +mobile()
+            width 380px
+            max-width 380px
+        &:hover
+        &.active
+          background-color #eee
+
+
     .autosuggest-component
       background-color #eee
       padding 15px

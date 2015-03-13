@@ -57,6 +57,7 @@ module.exports = React.createClass
             EventActions.create({
                 name: title
                 description: description
+                expire: Date.now()
             })
 
             state.title = ''

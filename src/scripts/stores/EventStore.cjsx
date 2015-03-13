@@ -5,12 +5,47 @@ _ = require 'lodash'
 
 key = 'sample-events'
 
+expire_day = 2
+
 module.exports = Reflux.createStore
     listenables: [EventActions]
-    mixins: [LocalStorageUtil]    
+    mixins: [LocalStorageUtil]
+    selectedStatus: 'active'
+
+    __activeFilter: (items) ->
+        now = Date.now()
+
+        return _.filter(items, (item) ->
+            item.expire? and (now - item.expire)/86400000 < expire_day
+        );
+
+    __expireFilter: (items) ->
+        now = Date.now()
+
+        return _.filter(items, (item) ->
+            !item.expire or (now - item.expire)/86400000 > expire_day
+        );
       
-    onGet: ->
+    onGet: (status = 'all') ->
         items = @get(key)
+
+        @selectedStatus = status
+
+        if status == 'active'
+
+            result = @__activeFilter(items)
+
+            @trigger result
+
+            return false
+
+        if status == 'expire'
+            result = @__expireFilter(items)
+
+            @trigger result
+
+            return false
+
         @trigger items
 
     onCreate: (item) ->
@@ -37,8 +72,13 @@ module.exports = Reflux.createStore
             @trigger items
         else
             result = _.filter(items, (item) ->
-
                 item.name.toLowerCase().indexOf(query.toLowerCase()) > -1
             );
+
+            if @selectedStatus == 'active'
+                result = @__activeFilter(result)
+
+            if @selectedStatus == 'active'
+                result = @__expireFilter(result)
 
             @trigger result
