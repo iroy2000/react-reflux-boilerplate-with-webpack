@@ -38,6 +38,8 @@ paths = {
     dest: 'public'
 }
 
+devServer = {}
+
 # your webpack-dev-server port, default 8888
 DEV_PORT = '8888'
 
@@ -111,7 +113,7 @@ gulp.task "webpack:build-dev", (callback) ->
 
   return
 
-devServer = {}
+
 gulp.task "webpack-dev-server", (callback) ->
   # Ensure there's a `./public/main.css` file that can be required.
   touch.sync('./' + paths.dest + '/main.css', time: new Date(0))
