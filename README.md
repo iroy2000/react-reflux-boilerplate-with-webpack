@@ -160,6 +160,6 @@ alias gulp='node --harmony `which gulp`'
 Now it should both works :)
 
 
-### Todo's
-    - Adding Real Tests :/
-    - Adding more examples
+
+### WTFPL License
+    - Please refer to [WTFPL](http://www.wtfpl.net/ "WTFPL") for more license information.
