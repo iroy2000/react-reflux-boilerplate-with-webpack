@@ -2,12 +2,12 @@
 
 # TODO CRAP, please help on adding more unit test :\
 
-jest.dontMock '../src/scripts/components/about'
+jest.dontMock '../src/scripts/components/pages/aboutme'
 
 describe 'App', ->
   it 'should should be a real test', ->
     React = require 'react/addons'
-    App = require '../src/scripts/components/about'
+    App = require '../src/scripts/components/pages/aboutme'
     TestUtils = React.addons.TestUtils
 
     # Render the App component.
