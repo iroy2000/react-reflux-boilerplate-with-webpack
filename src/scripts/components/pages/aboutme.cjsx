@@ -12,7 +12,12 @@ module.exports = React.createClass
                 </GenericContent>
 
                 <GenericContent title="Speaking Experience">
-                    <div>
+                   <div>
+                        <strong>Speaker @ HackingEDU 2015 ( PayPal )</strong>
+                        <br />
+                        Topic: How to think like a Hacker
+                   </div>
+                   <div>
                         <strong>Speaker @ Silicon Valley Code Camp 2014</strong>
                         <br />
                         Topic: Javascript BDD Unit Testing
