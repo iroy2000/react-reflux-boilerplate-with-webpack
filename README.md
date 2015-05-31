@@ -147,7 +147,7 @@ npm install --global gulp
 ```
 
 ### Gotcha
-There is a tricky part about JEST in node and in gulp.
+1) There is a tricky part about JEST in node and in gulp.
 
 While using the 'npm test' works fine,  running 'gulp test' will fail because of node harmony flag
 
@@ -160,6 +160,15 @@ alias gulp='node --harmony `which gulp`'
 Now it should both works :)
 
 
+2) There is a user report when they run the test, they see an error like the following :-
+
+```sh
+[14:03:47] Starting 'test'...
+Waiting on 1 test...Segmentation fault
+```
+
+If you see this error, seems like it is related to your node version.  For more information, the issue is here
+https://github.com/iroy2000/react-reflux-boilerplate-with-webpack/issues/4
 
 ### WTFPL License
     - Please refer to [WTFPL](http://www.wtfpl.net/ "WTFPL") for more license information.
