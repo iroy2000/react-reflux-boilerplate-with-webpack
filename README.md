@@ -167,7 +167,8 @@ Now it should both works :)
 Waiting on 1 test...Segmentation fault
 ```
 
-If you see this error, seems like it is related to your node version.  For more information, the issue link is here :-
+If you see this error, seems like it is related to your node version. It is an known issue that Jest doesn't support
+React in `NodeJS v0.12.x`.  For more information, you can look at the origin reported issue here :-
 
 https://github.com/iroy2000/react-reflux-boilerplate-with-webpack/issues/4
 
