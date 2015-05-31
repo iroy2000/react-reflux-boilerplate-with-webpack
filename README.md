@@ -160,14 +160,15 @@ alias gulp='node --harmony `which gulp`'
 Now it should both works :)
 
 
-2) There is a user report when they run the test, they see an error like the following :-
+2) There is a user reporting when he tries to run the test, he sees an error like the following :-
 
 ```sh
 [14:03:47] Starting 'test'...
 Waiting on 1 test...Segmentation fault
 ```
 
-If you see this error, seems like it is related to your node version.  For more information, the issue is here
+If you see this error, seems like it is related to your node version.  For more information, the issue link here :-
+
 https://github.com/iroy2000/react-reflux-boilerplate-with-webpack/issues/4
 
 ### WTFPL License
