@@ -167,7 +167,7 @@ Now it should both works :)
 Waiting on 1 test...Segmentation fault
 ```
 
-If you see this error, seems like it is related to your node version.  For more information, the issue link here :-
+If you see this error, seems like it is related to your node version.  For more information, the issue link is here :-
 
 https://github.com/iroy2000/react-reflux-boilerplate-with-webpack/issues/4
 
