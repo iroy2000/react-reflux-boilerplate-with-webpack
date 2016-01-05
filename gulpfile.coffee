@@ -59,6 +59,10 @@ gulp.task('css', ->
     )
     .pipe($.size())
     .pipe(gulp.dest(paths.dest))
+    .pipe(shell([  #6 fix css hot reload not work whenstylus @import other stylus file
+      'sleep 2; echo <%= file.path %>',
+      'touch <%= file.path %>'
+    ]))
     .pipe(map((a, cb) ->
       if devServer.invalidate? then devServer.invalidate()
       cb()
