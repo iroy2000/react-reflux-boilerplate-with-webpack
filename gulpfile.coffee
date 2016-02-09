@@ -1,5 +1,6 @@
 # gulp modules
 gulp          = require 'gulp'
+shell         = require 'gulp-shell'
 runSequence   = require 'run-sequence'
 gutil         = require 'gulp-util'
 stylus        = require 'gulp-stylus'
