@@ -1,3 +1,9 @@
+## Friendly Note
+
+I have lately created a more recent version -  [React Redux Boilerplate](https://github.com/iroy2000/react-redux-boilerplate)
+The main technologies in that repo are `React`, `Redux`, `ES6`, `PostCSS` and `Webpack`.  And if you are interested in and wanted to learn more about those technologies, please feel free to navigate to [React Redux Boilerplate](https://github.com/iroy2000/react-redux-boilerplate).
+
+
 # React Reflux Workflow Boilerplate
 
 "React Reflux Workflow Boilerplate" is a workflow framework that make life easier for developers by providing a development and production ready build process framework out of the box.
